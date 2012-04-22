@@ -5,7 +5,7 @@ File Downloader
 download the **latest release** of project by:
 **download.php?ver=latest**
 
-and this one to download **custom version**:
+Or the **custom version** by:
 **download.php?ver=VERSION_NUMBER**
 *e.g.: download.php?ver=0.5*
 
