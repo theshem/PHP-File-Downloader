@@ -5,6 +5,7 @@ require_once("./module.php");
 
 $version = $_GET['ver'] or die("You have to send <strong>project version</strong> by <strong>GET</strong> method, like: <strong>?ver=...</strong>");
 
+define("DIRECT_GET", 0);
 define("VER_SEP", '_');
 
 $valid_types = array(
@@ -33,5 +34,10 @@ header('Content-length: '.filesize($file));
 header("Content-Transfer-Encoding: binary");
 header('Content-disposition: attachment; filename="'.basename($file).'"');
 
-readfile($file);
+if(!!DIRECT_GET){
+	sleep(3);
+	header("Location: $file");
+}else{
+	readfile($file);
+}
 ?>

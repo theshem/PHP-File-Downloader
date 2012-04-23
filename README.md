@@ -5,7 +5,7 @@
 Put your files in **releases** directory.
 And that's it!
 
-In orser to Download the **latest release** of project use: **download.php?ver=latest**
+In order to Download the **latest release** of project use: **download.php?ver=latest**
 
 And for the **custom version** use: **download.php?ver=VERSION_NUMBER**
 *e.g.: download.php?ver=0.5*
