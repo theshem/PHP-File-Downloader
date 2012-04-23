@@ -1,5 +1,5 @@
 #File Downloader#
-###A simple file downloader program, works base on existing files in a directory.###
+**A simple file downloader program, works based on existing files in a directory.**
 
 ##HOW TO USE##
 Put your files in **releases** directory.
