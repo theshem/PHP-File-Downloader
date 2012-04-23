@@ -38,7 +38,7 @@ function get_release_address($arr, $ver, $ver_separator=NULL){
 		return $arr[multi_array_search(max($modtime), $arr)][0];
 	}else{
 		for($i=0; $i<count($arr); $i++){
-			if(strpos(basename($arr[$i][0]), $ver_separator.$ver)>0) return $arr[$i][0];
+			if(preg_match("#^(.+)".$ver_separator.$ver."[^0-9]*(\.[a-z7]{2,})$#i", basename($arr[$i][0]))) return $arr[$i][0];
 		}
 		return false;
 	}
