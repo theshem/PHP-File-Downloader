@@ -43,4 +43,27 @@ function get_release_address($arr, $ver, $ver_separator=NULL){
 		return false;
 	}
 }
+
+function get_referrer(){
+	return isset($_SERVER['HTTP_REFERER'])?strtolower($_SERVER['HTTP_REFERER']):'';
+}
+
+function get_ip(){
+	return isset($_SERVER['HTTP_X_FORWARDED_FOR'])?$_SERVER['HTTP_X_FORWARDED_FOR']:$_SERVER['REMOTE_ADDR'];
+}
+
+function check_referrer($refs){
+	if(!isset($_SERVER['HTTP_REFERER'])) return false;
+	foreach($refs as $val){
+		if(preg_match("#".trim($val)."#i", $_SERVER['HTTP_REFERER'])) return 1;
+	}
+	return false;
+}
+
+function log_download_info($log_file, $arr){
+	if($handler = @fopen($log_file, 'a+')){
+		@fputs($handler, implode("  ", $arr)."\n");
+		@fclose($handler);
+	}
+}
 ?>
